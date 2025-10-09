@@ -49,11 +49,6 @@ create_systemd_service() {
     exit 1
   fi
 
-  if [ -f /etc/systemd/system/backrest.service ]; then
-    echo "Systemd unit already exists. Skipping creation."
-    return 0
-  fi
-
   echo "Creating systemd service at /etc/systemd/system/backrest.service"
 
   sudo tee /etc/systemd/system/backrest.service > /dev/null <<- EOM
